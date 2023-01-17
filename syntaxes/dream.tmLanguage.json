@@ -6,6 +6,7 @@
     "expression": {
       "patterns": [
         { "include": "#strings" },
+        { "include": "#comment" },
         { "include": "#keywords" },
         { "include": "#function-definition" },
         { "include": "#function-call" },
@@ -13,9 +14,13 @@
         { "include": "#identifier" },
         { "include": "#identifier-literal" },
         { "include": "#operator" },
-        { "include": "#paren-expression" },
-        { "include": "#comment" }
+        { "include": "#paren-expression" }
       ]
+    },
+    "comment": {
+      "begin": "//",
+      "end": "\n",
+      "name": "comment.line.double-slash"
     },
     "function-definition": {
       "begin": "fn ",
@@ -43,11 +48,15 @@
         },
         {
           "name": "keyword.operator.new",
-          "match": "\\b(let|var|define|macro)\\b"
+          "match": "\\b(let|var|define|macro|global)\\b"
         },
         {
           "name": "keyword",
-          "match": "\\b(fn|type)\\b"
+          "match": "\\b(fn|type|use|pub|where)\\b"
+        },
+        {
+          "name": "entity.name.type",
+          "match": "(i32|f32|f64|i64|void)"
         }
       ]
     },
@@ -64,7 +73,7 @@
     },
     "operator": {
       "name": "entity.name.function",
-      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|\\<|\\>|\\&)\\s"
+      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->)\\s"
     },
     "identifier": {
       "name": "variable.name",
@@ -90,11 +99,6 @@
       },
       "name": "expression.group",
       "patterns": [{ "include": "#expression" }]
-    },
-    "comment": {
-      "begin": "//",
-      "end": "\n",
-      "name": "comment.line.double-slash"
     }
   },
   "scopeName": "index.dm"
