@@ -3,6 +3,10 @@
   "displayName": "dream",
   "description": "VSCode Support For Dream Programming Language",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:dream-lang/vscode.git"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },
