@@ -7,12 +7,33 @@
       "patterns": [
         { "include": "#strings" },
         { "include": "#keywords" },
+        { "include": "#function-definition" },
+        { "include": "#function-call" },
+        { "include": "#number" },
         { "include": "#identifier" },
-        { "include": "#operator" },
         { "include": "#identifier-literal" },
+        { "include": "#operator" },
         { "include": "#paren-expression" },
         { "include": "#comment" }
       ]
+    },
+    "function-definition": {
+      "begin": "fn ",
+      "end": "\\(",
+      "beginCaptures": {
+        "0": { "name": "keyword.operator.new" }
+      },
+      "name": "entity",
+      "patterns": [
+        {
+          "name": "constant",
+          "match": "[^\\s\\.]+"
+        }
+      ]
+    },
+    "function-call": {
+      "name": "entity.name.function",
+      "match": "[^\\s\\.\\:\\,]+\\("
     },
     "keywords": {
       "patterns": [
@@ -22,7 +43,11 @@
         },
         {
           "name": "keyword.operator.new",
-          "match": "\\b(fn|let|var|define|macro)\\b"
+          "match": "\\b(let|var|define|macro)\\b"
+        },
+        {
+          "name": "keyword",
+          "match": "\\b(fn|type)\\b"
         }
       ]
     },
@@ -37,22 +62,26 @@
         }
       ]
     },
+    "operator": {
+      "name": "entity.name.function",
+      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|\\<|\\>|\\&)\\s"
+    },
     "identifier": {
       "name": "variable.name",
-      "match": "[^\\s\\.]"
+      "match": "[^\\s\\.\\:\\,]+"
     },
-    "operator": {
-      "name": "keyword.operator",
-      "match": "(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|\\<|\\>|\\&)"
+    "number": {
+      "name": "constant.numeric",
+      "match": "[+-]?\\d+(\\.\\d+$)?"
     },
     "identifier-literal": {
-      "name": "variable.name",
+      "name": "entity.name",
       "begin": "'",
       "end": "'"
     },
     "paren-expression": {
-      "begin": "[\\(\\{\\[]",
-      "end": "[\\)\\}\\]]",
+      "begin": "\\b[\\(\\{\\[]\\b",
+      "end": "\\b[\\)\\}\\]]\\b",
       "beginCaptures": {
         "0": { "name": "punctuation.paren.open" }
       },
