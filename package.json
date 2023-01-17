@@ -1,5 +1,5 @@
 {
-  "name": "dream",
+  "name": "dream-lang-vscode",
   "displayName": "dream",
   "description": "VSCode Support For Dream Programming Language",
   "version": "0.0.1",
@@ -10,16 +10,28 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "dream",
-      "aliases": ["Dream", "dream"],
-      "extensions": [".dm"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "dream",
-      "scopeName": "index.dm",
-      "path": "./syntaxes/dream.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "dream",
+        "aliases": [
+          "Dream",
+          "dream",
+          "Dream Lang",
+          "dream-lang"
+        ],
+        "extensions": [
+          ".dm",
+          ".dream"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dream",
+        "scopeName": "index.dm",
+        "path": "./syntaxes/dream.tmLanguage.json"
+      }
+    ]
   }
 }
