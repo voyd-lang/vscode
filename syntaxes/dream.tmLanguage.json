@@ -1,32 +1,72 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Dream",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.dream",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.dream",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.dream",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "index.dm"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Dream",
+  "patterns": [{ "include": "#expression" }],
+  "repository": {
+    "expression": {
+      "patterns": [
+        { "include": "#strings" },
+        { "include": "#keywords" },
+        { "include": "#identifier" },
+        { "include": "#operator" },
+        { "include": "#identifier-literal" },
+        { "include": "#paren-expression" },
+        { "include": "#comment" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.dream",
+          "match": "\\b(if|while|for|return|break)\\b"
+        },
+        {
+          "name": "keyword.operator.new",
+          "match": "\\b(fn|let|var|define|macro)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.dream",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.dream",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "identifier": {
+      "name": "variable.name",
+      "match": "[^\\s\\.]"
+    },
+    "operator": {
+      "name": "keyword.operator",
+      "match": "(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|\\<|\\>|\\&)"
+    },
+    "identifier-literal": {
+      "name": "variable.name",
+      "begin": "'",
+      "end": "'"
+    },
+    "paren-expression": {
+      "begin": "[\\(\\{\\[]",
+      "end": "[\\)\\}\\]]",
+      "beginCaptures": {
+        "0": { "name": "punctuation.paren.open" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.paren.close" }
+      },
+      "name": "expression.group",
+      "patterns": [{ "include": "#expression" }]
+    },
+    "comment": {
+      "begin": "//",
+      "end": "\n",
+      "name": "comment.line.double-slash"
+    }
+  },
+  "scopeName": "index.dm"
 }
