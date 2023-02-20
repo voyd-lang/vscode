@@ -1,4 +1,4 @@
-# Dream Language VSCode Support
+# Mass Language VSCode Support
 
 Features:
 

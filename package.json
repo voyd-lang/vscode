@@ -1,13 +1,13 @@
 {
-  "name": "dream-lang-vscode",
-  "displayName": "dream",
-  "description": "VSCode Support For Dream Programming Language",
+  "name": "mass-lang-vscode",
+  "displayName": "mass",
+  "description": "VSCode Support For The Mass Programming Language",
   "version": "0.0.4",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:dream-lang/vscode.git"
+    "url": "git+ssh://git@github.com:mass-lang/vscode.git"
   },
-  "publisher": "dream-lang",
+  "publisher": "mass-lang",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -17,25 +17,27 @@
   "contributes": {
     "languages": [
       {
-        "id": "dream",
+        "id": "mass",
         "aliases": [
-          "Dream",
-          "dream",
-          "Dream Lang",
-          "dream-lang"
+          "Mass",
+          "mass",
+          "Mass Lang",
+          "Mass Language",
+          "Mass Programming Language",
+          "mass-lang"
         ],
         "extensions": [
-          ".dm",
-          ".dream"
+          ".ms",
+          ".mass"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "dream",
+        "language": "mass",
         "scopeName": "index.dm",
-        "path": "./syntaxes/dream.tmLanguage.json"
+        "path": "./syntaxes/mass.tmLanguage.json"
       }
     ]
   }
