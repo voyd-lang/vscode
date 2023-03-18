@@ -1,4 +1,4 @@
-# Mass Language VSCode Support
+# Void Language VSCode Support
 
 Features:
 
