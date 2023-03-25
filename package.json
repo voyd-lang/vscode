@@ -1,14 +1,14 @@
 {
-  "name": "mass-lang-vscode",
-  "displayName": "mass",
-  "description": "VSCode Support For The Mass Programming Language",
+  "name": "void-vscode",
+  "displayName": "void",
+  "description": "VSCode Support For The Void Programming Language",
   "version": "0.0.6",
   "icon": "images/logo.png",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:mass-lang/vscode.git"
   },
-  "publisher": "mass-lang",
+  "publisher": "voidlanguage",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -18,27 +18,28 @@
   "contributes": {
     "languages": [
       {
-        "id": "mass",
+        "id": "void",
         "aliases": [
-          "Mass",
-          "mass",
-          "Mass Lang",
-          "Mass Language",
-          "Mass Programming Language",
-          "mass-lang"
+          "Void",
+          "void",
+          "Void Lang",
+          "Void Language",
+          "Void Programming Language",
+          "void-lang",
+          "voidlanguage"
         ],
         "extensions": [
-          ".ms",
-          ".mass"
+          ".v",
+          ".void"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "mass",
+        "language": "void",
         "scopeName": "index.dm",
-        "path": "./syntaxes/mass.tmLanguage.json"
+        "path": "./syntaxes/void.tmLanguage.json"
       }
     ]
   }

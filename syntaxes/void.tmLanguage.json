@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Dream",
+  "name": "Void",
   "patterns": [{ "include": "#expression" }],
   "repository": {
     "expression": {
@@ -101,5 +101,5 @@
       "patterns": [{ "include": "#expression" }]
     }
   },
-  "scopeName": "index.dm"
+  "scopeName": "index.v"
 }
