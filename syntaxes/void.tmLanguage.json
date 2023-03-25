@@ -43,7 +43,7 @@
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.dream",
+          "name": "keyword.control.void",
           "match": "\\b(if|while|for|return|break)\\b"
         },
         {
@@ -61,12 +61,12 @@
       ]
     },
     "strings": {
-      "name": "string.quoted.double.dream",
+      "name": "string.quoted.double.void",
       "begin": "\"",
       "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.dream",
+          "name": "constant.character.escape.void",
           "match": "\\\\."
         }
       ]
@@ -101,5 +101,5 @@
       "patterns": [{ "include": "#expression" }]
     }
   },
-  "scopeName": "index.v"
+  "scopeName": "index.void"
 }

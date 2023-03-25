@@ -6,7 +6,7 @@
   "icon": "images/logo.png",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:mass-lang/vscode.git"
+    "url": "git+ssh://git@github.com:voidlanguage/vscode.git"
   },
   "publisher": "voidlanguage",
   "engines": {
@@ -29,16 +29,16 @@
           "voidlanguage"
         ],
         "extensions": [
-          ".v",
+          ".vd",
           ".void"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "../language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "void",
-        "scopeName": "index.dm",
+        "scopeName": "index.void",
         "path": "./syntaxes/void.tmLanguage.json"
       }
     ]
