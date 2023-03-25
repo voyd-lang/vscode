@@ -1,6 +1,6 @@
 {
   "name": "void-vscode",
-  "displayName": "void",
+  "displayName": "Void Language",
   "description": "VSCode Support For The Void Programming Language",
   "version": "0.0.6",
   "icon": "images/logo.png",
