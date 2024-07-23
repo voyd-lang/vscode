@@ -32,7 +32,7 @@
           ".vd",
           ".void"
         ],
-        "configuration": "../language-configuration.json"
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
