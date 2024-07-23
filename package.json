@@ -33,13 +33,27 @@
           ".void"
         ],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "void-markdown-injection"
       }
     ],
     "grammars": [
       {
         "language": "void",
-        "scopeName": "index.void",
+        "scopeName": "source.void",
         "path": "./syntaxes/void.tmLanguage.json"
+      },
+      {
+        "language": "void-markdown-injection",
+        "scopeName": "markdown.void.codeblock",
+        "path": "./syntaxes/void-markdown-injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.void": "void"
+        }
       }
     ]
   }

@@ -110,5 +110,5 @@
       "patterns": [{ "include": "#expression" }]
     }
   },
-  "scopeName": "index.void"
+  "scopeName": "source.void"
 }
