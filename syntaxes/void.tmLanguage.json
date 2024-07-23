@@ -5,6 +5,7 @@
   "repository": {
     "expression": {
       "patterns": [
+        { "include": "#types" },
         { "include": "#strings" },
         { "include": "#comment" },
         { "include": "#keywords" },
@@ -23,12 +24,16 @@
       "name": "comment.line.double-slash"
     },
     "function-definition": {
+      "name": "entity.name.function",
       "begin": "fn ",
       "end": "\\(",
       "beginCaptures": {
-        "0": { "name": "keyword.operator.new" }
+        "0": { "name": "keyword" }
       },
-      "name": "entity",
+      "endCaptures": {
+        "0": { "name": "punctuation.paren.open" }
+      },
+      "contentName": "meta.function",
       "patterns": [
         {
           "name": "constant",
@@ -39,6 +44,10 @@
     "function-call": {
       "name": "entity.name.function",
       "match": "[^\\s\\.\\:\\,]+\\("
+    },
+    "types": {
+      "name": "entity.name.type",
+      "match": "\\b([A-Z][a-zA-Z]*)\\b"
     },
     "keywords": {
       "patterns": [
@@ -72,8 +81,8 @@
       ]
     },
     "operator": {
-      "name": "entity.name.function",
-      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->)\\s"
+      "name": "keyword.operator",
+      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->|and|or)\\s"
     },
     "identifier": {
       "name": "variable.name",
