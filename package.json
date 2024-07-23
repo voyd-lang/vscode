@@ -2,7 +2,7 @@
   "name": "void-vscode",
   "displayName": "Void Language",
   "description": "VSCode Support For The Void Programming Language",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "icon": "images/logo.png",
   "repository": {
     "type": "git",
