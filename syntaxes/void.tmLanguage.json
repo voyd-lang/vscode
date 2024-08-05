@@ -61,7 +61,7 @@
         },
         {
           "name": "keyword",
-          "match": "\\b(fn|type|use|pub|where)\\b"
+          "match": "\\b(fn|type|use|pub|where|obj)\\b"
         },
         {
           "name": "entity.name.type",
@@ -82,7 +82,7 @@
     },
     "operator": {
       "name": "keyword.operator",
-      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->|and|or)\\s"
+      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->|and|or|is)\\s"
     },
     "identifier": {
       "name": "variable.name",
