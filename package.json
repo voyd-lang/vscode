@@ -32,7 +32,11 @@
           ".vd",
           ".void"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/icons/void-icon.png",
+          "dark": "./images/icons/void-icon.png"
+        }
       },
       {
         "id": "void-markdown-injection"
