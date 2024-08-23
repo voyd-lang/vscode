@@ -105,7 +105,7 @@
         },
         {
           "name": "keyword",
-          "match": "\\b(fn|type|use|pub|where|obj)\\b"
+          "match": "\\b(fn|type|use|pub|where|obj|extends)\\b"
         },
         {
           "name": "entity.name.type",
