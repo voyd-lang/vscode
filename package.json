@@ -14,7 +14,8 @@
   },
   "scripts": {
     "patch": "vsce publish patch",
-    "package": "vsce package"
+    "package": "vsce package -o void-vscode.vsix",
+    "install": "npm run package && code --install-extension void-vscode.vsix"
   },
   "categories": [
     "Programming Languages"
