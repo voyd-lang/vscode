@@ -12,6 +12,10 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "scripts": {
+    "patch": "vsce publish patch",
+    "package": "vsce package"
+  },
   "categories": [
     "Programming Languages"
   ],
@@ -60,5 +64,8 @@
         }
       }
     ]
+  },
+  "devDependencies": {
+    "vsce": "^2.15.0"
   }
 }
