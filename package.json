@@ -1,5 +1,6 @@
 {
   "name": "void-vscode",
+  "private": true,
   "displayName": "Void Language",
   "description": "VSCode Support For The Void Programming Language",
   "version": "0.0.16",
@@ -14,6 +15,7 @@
   },
   "scripts": {
     "patch": "vsce publish patch",
+    "publish": "vsce publish",
     "package": "vsce package -o void-vscode.vsix",
     "install": "npm run package && code --install-extension void-vscode.vsix"
   },
