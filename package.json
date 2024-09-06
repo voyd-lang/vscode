@@ -3,7 +3,7 @@
   "private": true,
   "displayName": "Void Language",
   "description": "VSCode Support For The Void Programming Language",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "icon": "images/logo.png",
   "repository": {
     "type": "git",
