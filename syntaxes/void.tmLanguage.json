@@ -9,14 +9,11 @@
         { "include": "#type-definition" },
         { "include": "#function-call" },
         { "include": "#types" },
-        { "include": "#strings" },
         { "include": "#comment" },
         { "include": "#keywords" },
         { "include": "#function-definition" },
-        { "include": "#number" },
-        { "include": "#identifier" },
-        { "include": "#identifier-literal" },
-        { "include": "#operator" },
+        { "include": "#constants" },
+        { "include": "#identifiers" },
         { "include": "#paren-expression" }
       ]
     },
@@ -120,49 +117,65 @@
       "patterns": [
         {
           "name": "keyword.control.void",
-          "match": "\\b(if|while|for|return|break)\\b"
+          "match": "\\b(if|then|else|while|for|return|break)\\b"
         },
         {
-          "name": "keyword.operator.new",
-          "match": "\\b(let|var|define|macro|global)\\b"
+          "name": "keyword.other.void",
+          "match": "\\b(use|pub|where|extends|mod|impl)\\b"
         },
         {
-          "name": "keyword",
-          "match": "\\b(fn|type|use|pub|where|obj|extends)\\b"
+          "name": "storage.type.void",
+          "match": "\\b(fn|type|obj|trait|union|let|var|global|macro)\\b"
         },
         {
           "name": "entity.name.type",
           "match": "(i32|f32|f64|i64|bool|void)"
+        },
+        {
+          "name": "keyword.operator",
+          "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->|and|or|is|as|has)\\s"
         }
       ]
     },
-    "strings": {
-      "name": "string.quoted.double.void",
-      "begin": "\"",
-      "end": "\"",
+    "identifiers": {
       "patterns": [
         {
-          "name": "constant.character.escape.void",
-          "match": "\\\\."
+          "name": "variable.name.void",
+          "match": "[_a-z][a-zA-Z0-9]*"
+        },
+        {
+          "name": "variable.language.void",
+          "match": "(self|std|src)"
+        },
+        {
+          "name": "variable.name.quoted.void",
+          "begin": "'",
+          "end": "'"
         }
       ]
     },
-    "operator": {
-      "name": "keyword.operator",
-      "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->|and|or|is)\\s"
-    },
-    "identifier": {
-      "name": "variable.name",
-      "match": "[_a-z][a-zA-Z0-9]*"
-    },
-    "number": {
-      "name": "constant.numeric",
-      "match": "[+-]?\\d+(\\.\\d+$)?"
-    },
-    "identifier-literal": {
-      "name": "entity.name",
-      "begin": "'",
-      "end": "'"
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.numeric.void",
+          "match": "[+-]?\\d+(\\.\\d+$)?"
+        },
+        {
+          "name": "constant.language.boolean.void",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "string.quoted.double.void",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.void",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
     },
     "paren-expression": {
       "begin": "\\b[\\(\\{\\[]\\b",
