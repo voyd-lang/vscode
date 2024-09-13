@@ -121,7 +121,7 @@
         },
         {
           "name": "keyword.other.void",
-          "match": "\\b(use|pub|where|extends|mod|impl)\\b"
+          "match": "\\b(use|pub|where|mod|impl)\\b"
         },
         {
           "name": "storage.type.void",
@@ -133,7 +133,23 @@
         },
         {
           "name": "keyword.operator",
-          "match": "\\s(=|==|\\?|\\.|\\+|\\-|\\\\|\\*|=>|>=|<=|<|>|\\&|\\*\\*\\*|->|and|or|is|as|has)\\s"
+          "match": "\\s(\\?|\\.|&|\\*\\*\\*|->|=>|\\||::|:)/\\s"
+        },
+        {
+          "name": "keyword.operator.assignment",
+          "match": "\\s(=|\\+=|-=|\\*=|\\/=|:=)\\s"
+        },
+        {
+          "name": "keyword.operator.logical",
+          "match": "\\s(==|>=|<=|<|>|and|or)\\s"
+        },
+        {
+          "name": "keyword.operator.word",
+          "match": "\\s(extends|is|as|has)\\s"
+        },
+        {
+          "name": "keyword.operator.arithmetic",
+          "match": "\\s(\\+|\\-|\\\\|\\*|%|^)\\s"
         }
       ]
     },
