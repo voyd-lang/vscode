@@ -75,7 +75,7 @@
       "patterns": [
         {
           "name": "meta.function-call.elision.void",
-          "begin": "(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b +(?!\\b(?:is|as|has|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
+          "begin": "(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b +(?!\\b(?:is|as|can|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.void"
@@ -172,7 +172,7 @@
         },
         {
           "name": "keyword.operator.word",
-          "match": "\\s(extends|is|as|has|final)\\s"
+          "match": "\\s(extends|is|as|can|final)\\s"
         },
         {
           "name": "keyword.operator.arithmetic",
