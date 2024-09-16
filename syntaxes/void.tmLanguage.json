@@ -1,17 +1,28 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Void",
-  "patterns": [{ "include": "#expression" }],
+  "patterns": [
+    { "include": "#jsx" },
+    { "include": "#keywords" },
+    { "include": "#type-definition" },
+    { "include": "#types" },
+    { "include": "#function-definition" },
+    { "include": "#function-call" },
+    { "include": "#comment" },
+    { "include": "#constants" },
+    { "include": "#identifiers" },
+    { "include": "#paren-expression" }
+  ],
   "repository": {
     "expression": {
       "patterns": [
         { "include": "#jsx" },
-        { "include": "#type-definition" },
-        { "include": "#function-call" },
-        { "include": "#types" },
-        { "include": "#comment" },
         { "include": "#keywords" },
+        { "include": "#type-definition" },
+        { "include": "#types" },
         { "include": "#function-definition" },
+        { "include": "#function-call" },
+        { "include": "#comment" },
         { "include": "#constants" },
         { "include": "#identifiers" },
         { "include": "#paren-expression" }
@@ -61,49 +72,65 @@
       ]
     },
     "function-call": {
-      "name": "meta.function-call.void",
-      "begin": "\\b(?!impl\\b)([A-Z][\\w]*|[a-z_][\\w]*)\\b(?=<|\\()",
-      "beginCaptures": {
-        "1": {
-          "name": "entity.name.function.void"
-        },
-        "2": {
-          "name": "entity.name.type.void"
-        }
-      },
-      "end": "(?=\\()",
       "patterns": [
         {
-          "name": "meta.type-arguments.void",
-          "begin": "<",
-          "end": ">",
+          "name": "meta.function-call.elision.void",
+          "begin": "(?x)\n(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))\n([a-zA-Z_][\\w]*)\\b\\s+(?=\\S)",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.void"
+            }
+          },
+          "end": "(?=$|;|\\n)",
           "patterns": [
             {
-              "match": "\\b[a-zA-Z_][\\w]*\\b",
-              "name": "entity.name.type.void"
-            },
-            {
-              "match": ",",
-              "name": "punctuation.separator.comma.void"
+              "include": "#expression"
             }
           ]
         },
         {
-          "begin": "\\(",
+          "name": "meta.function-call.void",
+          "begin": "\\b(?!impl\\b)([A-Z][\\w]*|[a-z_][\\w]*)\\b(?=<|\\()",
           "beginCaptures": {
-            "0": {
-              "name": "punctuation.paren.open.void"
+            "1": {
+              "name": "entity.name.function.void"
             }
           },
-          "end": "\\)",
-          "endCaptures": {
-            "0": {
-              "name": "punctuation.paren.close.void"
-            }
-          },
+          "end": "(?=\\()",
           "patterns": [
             {
-              "include": "#expression"
+              "name": "meta.type-arguments.void",
+              "begin": "<",
+              "end": ">",
+              "patterns": [
+                {
+                  "match": "\\b[a-zA-Z_][\\w]*\\b",
+                  "name": "entity.name.type.void"
+                },
+                {
+                  "match": ",",
+                  "name": "punctuation.separator.comma.void"
+                }
+              ]
+            },
+            {
+              "begin": "\\(",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.paren.open.void"
+                }
+              },
+              "end": "\\)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.paren.close.void"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#expression"
+                }
+              ]
             }
           ]
         }
@@ -145,7 +172,7 @@
         },
         {
           "name": "keyword.operator.word",
-          "match": "\\s(extends|is|as|has)\\s"
+          "match": "\\s(extends|is|as|has|final)\\s"
         },
         {
           "name": "keyword.operator.arithmetic",
