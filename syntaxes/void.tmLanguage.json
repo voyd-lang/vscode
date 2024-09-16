@@ -75,7 +75,7 @@
       "patterns": [
         {
           "name": "meta.function-call.elision.void",
-          "begin": "(?x)\n(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))\n([a-zA-Z_][\\w]*)\\b\\s+(?=\\S)",
+          "begin": "(?x)(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b\\s+(?!\\b(?:is|as|has|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.void"
