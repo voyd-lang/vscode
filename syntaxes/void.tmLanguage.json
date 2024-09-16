@@ -75,13 +75,13 @@
       "patterns": [
         {
           "name": "meta.function-call.elision.void",
-          "begin": "(?x)(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b\\s+(?!\\b(?:is|as|has|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
+          "begin": "(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b +(?!\\b(?:is|as|has|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.void"
             }
           },
-          "end": "(?=$|;|\\n)",
+          "end": "(?=$|\\n)",
           "patterns": [
             {
               "include": "#expression"
