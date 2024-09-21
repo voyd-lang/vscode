@@ -1,4 +1,4 @@
-# Void Language VSCode Support
+# Voyd Language VSCode Support
 
 Features:
 

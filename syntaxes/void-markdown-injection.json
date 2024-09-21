@@ -3,12 +3,12 @@
   "injectionSelector": "L:text.html.markdown",
   "patterns": [
     {
-      "include": "#void-code-block"
+      "include": "#voyd-code-block"
     }
   ],
   "repository": {
-    "void-code-block": {
-      "begin": "(^|\\G)(\\s*)(\\`{3,}|~{3,})\\s*(?i:(void)(\\s+[^`~]*)?$)",
+    "voyd-code-block": {
+      "begin": "(^|\\G)(\\s*)(\\`{3,}|~{3,})\\s*(?i:(voyd)(\\s+[^`~]*)?$)",
       "name": "markup.fenced_code.block.markdown",
       "end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
       "beginCaptures": {
@@ -31,15 +31,15 @@
         {
           "begin": "(^|\\G)(\\s*)(.*)",
           "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
-          "contentName": "meta.embedded.block.void",
+          "contentName": "meta.embedded.block.voyd",
           "patterns": [
             {
-              "include": "source.void"
+              "include": "source.voyd"
             }
           ]
         }
       ]
     }
   },
-  "scopeName": "markdown.void.codeblock"
+  "scopeName": "markdown.voyd.codeblock"
 }
