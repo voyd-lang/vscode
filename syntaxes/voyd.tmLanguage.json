@@ -221,8 +221,8 @@
       ]
     },
     "paren-expression": {
-      "begin": "\\b[\\(\\{\\[]\\b",
-      "end": "\\b[\\)\\}\\]]\\b",
+      "begin": "[\\(\\{\\[]",
+      "end": "[\\)\\}\\]]",
       "beginCaptures": {
         "0": { "name": "punctuation.paren.open" }
       },
