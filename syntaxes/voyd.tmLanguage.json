@@ -156,7 +156,7 @@
         },
         {
           "name": "entity.name.type",
-          "match": "(i32|f32|f64|i64|bool|voyd|void)"
+          "match": "(i32|f32|f64|i64|bool|voyd|void|string)"
         },
         {
           "name": "keyword.operator",
@@ -168,11 +168,11 @@
         },
         {
           "name": "keyword.operator.logical",
-          "match": "\\s(==|>=|<=|<|>|and|or)\\s"
+          "match": "\\s(==|>=|<=|<|>|and|or|xor)\\s"
         },
         {
           "name": "keyword.operator.word",
-          "match": "\\s(extends|is|as|can|final)\\s"
+          "match": "\\s(extends|is|is_subtype_of|has_trait|as|in|final)\\s"
         },
         {
           "name": "keyword.operator.arithmetic",
