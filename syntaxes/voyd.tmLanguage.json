@@ -155,27 +155,27 @@
           "match": "\\b(fn|type|obj|trait|union|let|var|global|macro)\\b"
         },
         {
-          "name": "entity.name.type",
-          "match": "(i32|f32|f64|i64|bool|voyd|void|string)"
+          "name": "entity.name.type.voyd",
+          "match": "\\b(i32|f32|f64|i64|bool|voyd|void|string)\\b"
         },
         {
-          "name": "keyword.operator",
+          "name": "keyword.operator.voyd",
           "match": "\\s(\\?|\\.|&|\\*\\*\\*|->|=>|\\||::|:)/\\s"
         },
         {
-          "name": "keyword.operator.assignment",
+          "name": "keyword.operator.assignment.voyd",
           "match": "\\s(=|\\+=|-=|\\*=|\\/=|:=)\\s"
         },
         {
-          "name": "keyword.operator.logical",
+          "name": "keyword.operator.logical.voyd",
           "match": "\\s(==|>=|<=|<|>|and|or|xor)\\s"
         },
         {
-          "name": "keyword.operator.word",
+          "name": "keyword.operator.word.voyd",
           "match": "\\s(extends|is|is_subtype_of|has_trait|as|in|final)\\s"
         },
         {
-          "name": "keyword.operator.arithmetic",
+          "name": "keyword.operator.arithmetic.voyd",
           "match": "\\s(\\+|\\-|\\\\|\\*|%|^)\\s"
         }
       ]
