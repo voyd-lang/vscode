@@ -75,7 +75,7 @@
       "patterns": [
         {
           "name": "meta.function-call.elision.voyd",
-          "begin": "(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b +(?!\\b(?:is|as|can|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
+          "begin": "(?:(?<=^\\s*)|(?<=\\s(?:=|=>|:)\\s))([a-zA-Z_][\\w]*)\\b +(?!\\b(?:is|as|has_trait|is_subtype_of|extends|and|or)\\b|[+\\-*/=<>!&|?:])",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.voyd"
