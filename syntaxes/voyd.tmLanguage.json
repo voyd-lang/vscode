@@ -71,6 +71,22 @@
         }
       ]
     },
+    "type-arguments": {
+      "name": "meta.type-arguments.voyd",
+      "begin": "<",
+      "end": ">",
+      "patterns": [
+        { "include": "#type-arguments" },
+        {
+          "match": "\\b[a-zA-Z_][\\w]*\\b",
+          "name": "entity.name.type.voyd"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.comma.voyd"
+        }
+      ]
+    },
     "function-call": {
       "patterns": [
         {
@@ -96,23 +112,9 @@
               "name": "entity.name.function.voyd"
             }
           },
-          "end": "(?=\\()",
+          "end": "(?=\\(|\\s+[_$[:alpha:]][_$[:alnum:]]*\\s*=>)",
           "patterns": [
-            {
-              "name": "meta.type-arguments.voyd",
-              "begin": "<",
-              "end": ">",
-              "patterns": [
-                {
-                  "match": "\\b[a-zA-Z_][\\w]*\\b",
-                  "name": "entity.name.type.voyd"
-                },
-                {
-                  "match": ",",
-                  "name": "punctuation.separator.comma.voyd"
-                }
-              ]
-            },
+            { "include": "#type-arguments" },
             {
               "begin": "\\(",
               "beginCaptures": {
